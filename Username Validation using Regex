@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class UsernameValidation {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Username: ");
+        String username = sc.nextLine();
+
+        String regex = "^[a-zA-Z0-9]{5,12}$";
+
+        if (Pattern.matches(regex, username)) {
+            System.out.println("Valid Username");
+        } else {
+            System.out.println("Invalid Username");
+        }
+    }
+}
