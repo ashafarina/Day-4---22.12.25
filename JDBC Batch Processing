@@ -1,0 +1,24 @@
+import java.sql.*;
+
+public class BatchInsert {
+    public static void main(String[] args) {
+
+        try {
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/college", "root", "password");
+
+            Statement st = con.createStatement();
+
+            st.addBatch("INSERT INTO student(name, department) VALUES ('A', 'CSE')");
+            st.addBatch("INSERT INTO student(name, department) VALUES ('B', 'IT')");
+            st.addBatch("INSERT INTO student(name, department) VALUES ('C', 'AI')");
+
+            st.executeBatch();
+            System.out.println("Batch Insert Completed");
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
