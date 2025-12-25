@@ -1,0 +1,9 @@
+public class ReplaceSpaces {
+    public static void main(String[] args) {
+
+        String text = "Java Database Connectivity Program";
+
+        String result = text.replaceAll("\\s+", "-");
+        System.out.println("URL Format: " + result);
+    }
+}
