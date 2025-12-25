@@ -1,0 +1,15 @@
+import java.util.regex.*;
+
+public class ExtractNumbers {
+    public static void main(String[] args) {
+
+        String input = "Order 123 delivered in 4 days costing 500 rupees";
+
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher(input);
+
+        while (m.find()) {
+            System.out.println("Found Number: " + m.group());
+        }
+    }
+}
