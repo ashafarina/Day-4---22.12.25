@@ -1,0 +1,19 @@
+here  import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class AadhaarValidation {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Aadhaar Number: ");
+        String aadhaar = sc.nextLine();
+
+        String regex = "^[0-9]{12}$";
+
+        if (Pattern.matches(regex, aadhaar)) {
+            System.out.println("Valid Aadhaar Number");
+        } else {
+            System.out.println("Invalid Aadhaar Number");
+        }
+    }
+}
