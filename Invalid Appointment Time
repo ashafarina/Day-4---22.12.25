@@ -1,0 +1,14 @@
+public class AppointmentCheck {
+    public static void main(String[] args) {
+
+        int time = 23; // 24-hour format
+
+        try {
+            if (time > 20)
+                throw new Exception("Appointment Closed");
+            System.out.println("Appointment Confirmed");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
